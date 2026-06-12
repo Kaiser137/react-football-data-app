@@ -1,14 +1,16 @@
 const API_KEY = import.meta.env.VITE_API_KEY;
-
 const BASE_URL = 'https://v3.football.api-sports.io';
 
+import { season, leagueId } from '../util/utils'
+const temporada = season;
+const IdLiga = leagueId;
+
 /**
- * @param {number} leagueId
- * @param {number} season
+ * @param {AbortSignal} signal
  */
 
-export async function getTeams(leagueId, season) {
-    const url = `${BASE_URL}/teams?league=${leagueId}&season=${season}`;
+export async function getTeams(IdLiga, temporada) {
+    const url = `${BASE_URL}/teams?league=${IdLiga}&season=${temporada}`;
 
     const options = {
         method: 'GET',
@@ -16,6 +18,7 @@ export async function getTeams(leagueId, season) {
             'x-apisports-key': API_KEY, 
             'Accept': 'application/json'
         }
+        signal: signal
     };
 
     try {        

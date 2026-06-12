@@ -8,12 +8,14 @@ function App() {
   // O useEffect com um array de dependências vazio [] 
   // garante que esse código rode APENAS UMA VEZ quando a página carregar.
   useEffect(() => {
+
+    const controller = new AbortController();
     
     // Criamos uma função assíncrona interna para poder usar o await
     async function testarAPI() {
       try {
         // Chamamos a sua função!
-        const times = await getTeams(71, 2024); 
+        const times = await getTeams(71, 2024, controller.signal); 
         
         // Vamos dar um log AQUI NO FRONTEND apenas para confirmar se os dados chegaram
         console.log("🏆 Dados que chegaram no React:", times); 
@@ -23,6 +25,10 @@ function App() {
     }
 
     testarAPI();
+
+    return () => {
+      controller.abort(); // Cancela o fetch se o App for desmontado
+    };
 
   }, []); // <-- Atenção ao array vazio aqui!
 
