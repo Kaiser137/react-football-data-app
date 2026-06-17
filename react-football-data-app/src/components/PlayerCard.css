@@ -1,0 +1,80 @@
+/* ==========================================================================
+   🏃‍♂️ CARTÃO DO JOGADOR
+   ========================================================================== */
+.player-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--borda-suave);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: var(--transicao);
+  box-shadow: var(--sombra-card);
+  position: relative;
+  height: 100%;
+}
+
+/* Efeito Hover que levanta o cartão e ilumina as bordas */
+.player-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(16, 185, 129, 0.4);
+  box-shadow: 0 15px 25px -5px rgba(0, 0, 0, 0.4);
+}
+
+/* ==========================================================================
+   📸 FOTO DO JOGADOR
+   ========================================================================== */
+.player-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%; /* Foto perfeitamente redonda, padrão ouro para avatares */
+  object-fit: cover; /* Evita que a cara do jogador fique esticada */
+  margin-bottom: 16px;
+  border: 3px solid transparent; /* Preparação para o efeito hover */
+  transition: var(--transicao);
+  background-color: var(--bg-principal); /* Fundo caso a imagem demore a carregar */
+}
+
+/* A foto ganha uma borda verde neon quando passamos o rato no cartão */
+.player-card:hover img {
+  border-color: var(--accent-neon);
+  transform: scale(1.05);
+}
+
+/* ==========================================================================
+   📝 INFORMAÇÕES E ESTATÍSTICAS
+   ========================================================================== */
+.player-card h4 {
+  font-size: 1.15rem;
+  color: var(--texto-principal);
+  margin-bottom: 16px;
+  font-weight: 700;
+  min-height: 48px; /* Mantém a altura mesmo que o nome quebre em duas linhas */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.player-card p {
+  font-size: 0.95rem;
+  color: var(--texto-secundario);
+  width: 100%;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Linha subtil a separar as estatísticas */
+  display: flex;
+  justify-content: space-between; /* Empurra a "label" para a esquerda e o "valor" para a direita */
+  margin: 0;
+}
+
+/* Destaca o nome da estatística (ex: "Posição:", "Idade:") */
+.player-card p strong {
+  color: var(--texto-principal);
+  font-weight: 600;
+}
+
+/* O último parágrafo (Golos) não precisa de linha por baixo */
+.player-card p:last-child {
+  border-bottom: none;
+}

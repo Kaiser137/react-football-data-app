@@ -1,42 +1,23 @@
-// 1. Importe o hook useEffect do React
-import { useEffect } from 'react';
-// 2. Importe a sua função (ajuste o caminho da pasta conforme a sua estrutura)
-import { getTeams } from './services/getTeams'; 
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Header from './components/Header';
+import Home from './pages/Home';
+import Teams from './pages/Teams';
+import TeamDetails from './pages/TeamDetails';
+import NotFound from './pages/NotFound';
 
 function App() {
-
-  // O useEffect com um array de dependências vazio [] 
-  // garante que esse código rode APENAS UMA VEZ quando a página carregar.
-  useEffect(() => {
-
-    const controller = new AbortController();
-    
-    // Criamos uma função assíncrona interna para poder usar o await
-    async function testarAPI() {
-      try {
-        // Chamamos a sua função!
-        const times = await getTeams(71, 2024, controller.signal); 
-        
-        // Vamos dar um log AQUI NO FRONTEND apenas para confirmar se os dados chegaram
-        console.log("🏆 Dados que chegaram no React:", times); 
-      } catch (error) {
-        console.error("❌ Deu ruim no teste:", error.message);
-      }
-    }
-
-    testarAPI();
-
-    return () => {
-      controller.abort(); // Cancela o fetch se o App for desmontado
-    };
-
-  }, []); // <-- Atenção ao array vazio aqui!
-
   return (
-    <div>
-      <h1>Testando a API-Football ⚽</h1>
-      <p>Abra o console do navegador (Aperte F12) e veja se os times apareceram!</p>
-    </div>
+    <BrowserRouter>
+      <Header />
+      <main style={{ padding: '20px' }}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/liga/:leagueId" element={<Teams />} />
+          <Route path="/time/:id" element={<TeamDetails />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </main>
+    </BrowserRouter>
   );
 }
 

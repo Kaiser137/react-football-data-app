@@ -1,0 +1,94 @@
+/* ==========================================================================
+   🏟️ CONTAINER PRINCIPAL - TEAM DETAILS
+   ========================================================================== */
+.team-details-container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px; /* Espaçamento ideal entre o botão de voltar, o técnico e os jogadores */
+  width: 100%;
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+/* Títulos das secções (Treinador Atual e Plantel) */
+.coach-section h3,
+.players-section h3 {
+  font-size: 1.6rem;
+  color: var(--texto-principal);
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--borda-suave);
+  padding-bottom: 10px;
+}
+
+/* ==========================================================================
+   👔 CARTÃO DO TREINADOR (Coach Card)
+   ========================================================================== */
+.coach-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 24px;
+  background: linear-gradient(135deg, var(--bg-card) 0%, rgba(15, 23, 42, 1) 100%);
+  border: 1px solid var(--borda-suave);
+  border-left: 4px solid var(--accent-neon); /* Linha verde neon de destaque */
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: var(--sombra-card);
+  max-width: 600px;
+  transition: var(--transicao);
+}
+
+/* Efeito de hover subtil no cartão do técnico */
+.coach-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+/* Estilo da imagem do técnico (complementando o style inline que você colocou no JSX) */
+.coach-card img {
+  object-fit: cover;
+  border: 3px solid var(--accent-neon); /* Bordinha verde em volta da foto */
+  box-shadow: 0 4px 10px rgba(16, 185, 129, 0.2);
+}
+
+/* Textos dentro do cartão do técnico */
+.coach-card div p {
+  color: var(--texto-secundario);
+  margin-bottom: 6px;
+  font-size: 1rem;
+}
+
+/* Destaque para o nome do técnico */
+.coach-card div p strong {
+  font-size: 1.4rem;
+  color: var(--texto-principal);
+  display: block; /* Faz o nome quebrar para a linha de cima das outras infos */
+  margin-bottom: 8px;
+}
+
+/* ==========================================================================
+   🏃‍♂️ GRELHA DE JOGADORES (Plantel)
+   ========================================================================== */
+/* Aqui entra a organização dos cartões dos jogadores importados do componente PlayerCard */
+.players-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 24px;
+  width: 100%;
+}
+
+/* ==========================================================================
+   📱 RESPONSIVIDADE (Para o ecrã do telemóvel)
+   ========================================================================== */
+@media (max-width: 600px) {
+  .coach-card {
+    flex-direction: column; /* Empilha a foto e o texto do técnico */
+    text-align: center;
+    border-left: 1px solid var(--borda-suave);
+    border-top: 4px solid var(--accent-neon); /* A linha verde passa para o topo */
+  }
+
+  .players-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); /* Cartões mais fininhos no telemóvel */
+  }
+}

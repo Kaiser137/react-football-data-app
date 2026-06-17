@@ -1,0 +1,82 @@
+/* ==========================================================================
+   🛡️ CARTÃO DO TIME PRINCIPAL
+   ========================================================================== */
+.team-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--borda-suave);
+  border-radius: 16px;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column; /* Organiza os itens de cima para baixo */
+  align-items: center;
+  text-align: center;
+  transition: var(--transicao);
+  box-shadow: var(--sombra-card);
+  position: relative;
+  overflow: hidden;
+  height: 100%; /* Garante que o cartão ocupe toda a altura da linha da grid */
+}
+
+/* Efeito Hover Premium (Levanta e brilha a borda) */
+.team-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(16, 185, 129, 0.4); /* Borda verde neon */
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+/* ==========================================================================
+   🖼️ ESCUDO DO TIME
+   ========================================================================== */
+.team-card img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain; /* Impede que o escudo deforme */
+  margin-bottom: 16px;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3)); /* Sombreado atrás do PNG do escudo */
+  transition: var(--transicao);
+}
+
+/* Efeito de zoom no escudo ao passar o mouse no cartão */
+.team-card:hover img {
+  transform: scale(1.1);
+}
+
+/* ==========================================================================
+   📝 TEXTOS (Nome e Fundação)
+   ========================================================================== */
+.team-card h3 {
+  font-size: 1.25rem;
+  color: var(--texto-principal);
+  margin-bottom: 8px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.team-card p {
+  font-size: 0.95rem;
+  color: var(--texto-secundario);
+  margin-bottom: 24px; /* Empurra o botão um pouco para baixo */
+}
+
+/* ==========================================================================
+   🔘 BOTÃO DE DETALHES
+   ========================================================================== */
+.btn-details {
+  margin-top: auto; /* A MÁGICA: Empurra o botão sempre para o final do cartão! */
+  display: block;
+  width: 100%; /* O botão ocupa toda a largura disponível */
+  background-color: var(--accent-neon);
+  color: #000; /* Texto escuro contrasta bem com o fundo neon */
+  font-weight: 700;
+  text-decoration: none;
+  padding: 12px 0;
+  border-radius: 8px;
+  transition: var(--transicao);
+}
+
+.btn-details:hover {
+  background-color: var(--accent-neon-hover);
+  color: var(--texto-principal);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}

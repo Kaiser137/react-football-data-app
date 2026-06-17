@@ -1,0 +1,89 @@
+/* ==========================================================================
+   🏠 CONTAINER PRINCIPAL DA PÁGINA HOME
+   ========================================================================== */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza a barra de busca e o título */
+  width: 100%;
+}
+
+.page-container h2 {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* ==========================================================================
+   📱 GRELHA DE LIGAS (Responsiva)
+   ========================================================================== */
+.leagues-grid {
+  display: grid;
+  /* Cria colunas automáticas que se adaptam ao tamanho da tela */
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 30px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* ==========================================================================
+   🃏 CARTÕES DE LIGA (Glassmorphism + Hover Premium)
+   ========================================================================== */
+.league-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--borda-suave);
+  border-radius: 16px;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: var(--transicao);
+  box-shadow: var(--sombra-card);
+  position: relative;
+  overflow: hidden;
+}
+
+/* O efeito que levanta o cartão quando passamos o mouse */
+.league-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(16, 185, 129, 0.4); /* Borda brilha verde neon */
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo do Logo da Liga */
+.league-card img {
+  width: 130px;
+  height: 130px;
+  object-fit: contain;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+  transition: var(--transicao);
+}
+
+/* Faz a imagem dar um leve zoom no hover */
+.league-card:hover img {
+  transform: scale(1.08);
+}
+
+/* Textos do Cartão */
+.league-card h3 {
+  font-size: 1.3rem;
+  color: var(--texto-principal);
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.league-card p {
+  font-size: 0.95rem;
+  color: var(--texto-secundario);
+  margin-bottom: 20px; /* Dá espaço para o botão que fica embaixo */
+}
+
+/* ==========================================================================
+   📱 RESPONSIVIDADE EXTRA
+   ========================================================================== */
+@media (max-width: 600px) {
+  .leagues-grid {
+    grid-template-columns: 1fr; /* No celular, fica 1 cartão por linha */
+  }
+}

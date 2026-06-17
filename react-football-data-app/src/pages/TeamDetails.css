@@ -1,0 +1,142 @@
+/* ==========================================================================
+   👔 CONTAINER DE DETALHES (Treinador + Jogadores)
+   ========================================================================== */
+.details-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 40px; /* Dá um respiro legal entre a área do técnico e a dos jogadores */
+  width: 100%;
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.details-wrapper h2 {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--borda-suave);
+  padding-bottom: 10px;
+  color: var(--texto-principal);
+}
+
+/* ==========================================================================
+   📋 CARTÃO DO TREINADOR (Destaque Horizontal)
+   ========================================================================== */
+.coach-details-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+  background: linear-gradient(135deg, var(--bg-card) 0%, rgba(15, 23, 42, 1) 100%);
+  border: 1px solid var(--borda-suave);
+  border-left: 4px solid var(--accent-neon); /* Linha verde neon para dar um charme premium */
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: var(--sombra-card);
+  max-width: 600px;
+}
+
+.coach-details-card img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%; /* Foto redondinha */
+  object-fit: cover;
+  border: 3px solid var(--accent-neon);
+  box-shadow: 0 4px 10px rgba(16, 185, 129, 0.3);
+}
+
+.coach-details-card h3 {
+  font-size: 1.5rem;
+  color: var(--texto-principal);
+  margin-bottom: 8px;
+}
+
+.coach-details-card p {
+  color: var(--texto-secundario);
+  margin-bottom: 4px;
+  font-size: 1rem;
+}
+
+/* ==========================================================================
+   🏃‍♂️ GRELHA E CARTÕES DOS JOGADORES (Plantel)
+   ========================================================================== */
+.players-list-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 24px;
+  width: 100%;
+}
+
+.player-detail-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--borda-suave);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: var(--transicao);
+  box-shadow: var(--sombra-card);
+  position: relative;
+}
+
+.player-detail-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(16, 185, 129, 0.4);
+  box-shadow: 0 15px 25px -5px rgba(0, 0, 0, 0.4);
+}
+
+/* Foto do Jogador */
+.player-detail-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 16px;
+  border: 3px solid transparent; /* Prepara a borda para o hover */
+  transition: var(--transicao);
+}
+
+.player-detail-card:hover img {
+  border-color: var(--accent-neon); /* Borda fica verde quando passa o mouse no card */
+  transform: scale(1.05);
+}
+
+.player-detail-card h4 {
+  font-size: 1.1rem;
+  color: var(--texto-principal);
+  margin-bottom: 12px;
+  min-height: 48px; /* Mantém o alinhamento mesmo se o nome for grande e quebrar linha */
+  display: flex;
+  align-items: center;
+}
+
+.player-detail-card p {
+  font-size: 0.9rem;
+  color: var(--texto-secundario);
+  margin-bottom: 6px;
+  width: 100%;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.player-detail-card p:last-child {
+  border-bottom: none;
+  font-weight: 700;
+  color: var(--texto-principal);
+}
+
+/* ==========================================================================
+   📱 RESPONSIVIDADE (Telemóveis e Ecrãs Pequenos)
+   ========================================================================== */
+@media (max-width: 600px) {
+  .coach-details-card {
+    flex-direction: column;
+    text-align: center;
+    border-left: 1px solid var(--borda-suave);
+    border-top: 4px solid var(--accent-neon); /* A linha muda para o topo no celular */
+  }
+
+  .players-list-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Cards menores no celular */
+  }
+}
