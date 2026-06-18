@@ -37,7 +37,7 @@ Para alimentar este ecossistema, escolhemos a **[API-Football v3](https://www.ap
 ## 🚀 Tecnologias Utilizadas
 
 - **Frontend:** [React.js](https://reactjs.org/) & JavaScript (ES6+)
-- **Estilização:** TailwindCSS / Styled Components / CSS Modules *(Manter a opção utilizada)*
+- **Estilização:** CSS Modules
 - **Roteamento:** React Router DOM (para navegação entre ligas, times e perfis)
 - **Fonte de Dados:** [API-Football (v3)](https://www.api-football.com/documentation-v3)
 
