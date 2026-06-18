@@ -6,7 +6,7 @@ Um portal interativo desenvolvido focado em fornecer informações, estatística
 
 ## 👥 Alunos / Desenvolvedores
 
-- **Cezar** ([Kaiser137]((https://github.com/Kaiser137))
+- **Cezar** ([Kaiser137](https://github.com/Kaiser137))
 - **Igor** ([Ig0r-or](https://github.com/Ig0r-or))
 
 
@@ -27,9 +27,9 @@ Para alimentar este ecossistema, escolhemos a **[API-Football v3](https://www.ap
 
 ## ✨ Funcionalidades Implementadas
 
-- **🏆 Ligas & Competições:** Listagem e consulta das principais ligas do mundo, permitindo visualizar tabelas de classificação, rodadas e temporadas disponíveis.
-- **🛡️ Times (Clubs):** Informações detalhadas sobre os clubes, incluindo dados institucionais, histórico do estádio, elenco atual e estatísticas gerais de desempenho.
-- **🏃 Jogadores (Players):** Perfis completos dos atletas com estatísticas detalhadas sobre gols, assistências, cartões, minutos jogados e avaliações por temporada.
+- **🏆 Ligas & Competições:** Listagem e consulta do Brasileirão, permitindo visualizar tabelas de classificação.
+- **🛡️ Times (Clubs):** Informações detalhadas sobre os clubes, incluindo técnico, elenco atual e estatísticas gerais de desempenho.
+- **🏃 Jogadores (Players):** Perfis dos atletas com estatísticas sobre gols, assistências, idade.
 - **👔 Técnicos (Coaches):** Histórico de carreira e informações sobre os treinadores atuais de cada equipe do banco de dados.
 
 ---
