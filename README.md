@@ -30,7 +30,7 @@ Para alimentar este ecossistema, escolhemos a **[API-Football v3](https://www.ap
 - **🏆 Ligas & Competições:** Listagem e consulta do Brasileirão, permitindo visualizar tabelas de classificação.
 - **🛡️ Times (Clubs):** Informações detalhadas sobre os clubes, incluindo técnico, elenco atual e estatísticas gerais de desempenho.
 - **🏃 Jogadores (Players):** Perfis dos atletas com estatísticas sobre gols, assistências, idade.
-- **👔 Técnicos (Coaches):** Histórico de carreira e informações sobre os treinadores atuais de cada equipe do banco de dados.
+- **👔 Técnicos (Coaches):** Perfil do técnico com idade, clube atual.
 
 ---
 
