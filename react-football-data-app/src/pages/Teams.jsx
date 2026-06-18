@@ -70,7 +70,7 @@ export default function Teams() {
               <h3>{team.nome}</h3>
               <p>Estádio: {team.estadio}</p>
               <p>Cidade: {team.cidadeEstadio}</p>
-              <Link to={`/time/${team.id}`} className="btn-link">Ver Elenco</Link>
+              <Link to={`/time/${team.id}`} state={{ teamId: team.id }} className="btn-link">Ver Elenco</Link>
             </div>
           ))}
         </div>

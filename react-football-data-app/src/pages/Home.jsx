@@ -21,8 +21,8 @@ export default function Home() {
         setError(null);
       
         const data = await getTeams(defaultLeagueId, defaultSeason, controller.signal);
-        
-        setTeams(data);
+        const timesOrdenados = data.sort((a, b) => a.nome.localeCompare(b.nome));
+        setTeams(timesOrdenados);
         setFilteredTeams(data);
       } catch (err) {
         if (err.name !== 'AbortError') {

@@ -1,0 +1,172 @@
+/* ==========================================================================
+   🏆 PÁGINA DA TABELA DE CLASSIFICAÇÃO (STANDINGS)
+   ========================================================================== */
+
+.standings-page {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  animation: fadeInPage 0.5s ease-out forwards;
+}
+
+/* --- Cabeçalho --- */
+.page-header {
+  margin-bottom: 30px;
+  border-bottom: 2px solid var(--accent-neon, #10b981);
+  padding-bottom: 16px;
+}
+
+.page-header h2 {
+  font-size: 2rem;
+  color: var(--texto-principal, #f8fafc);
+  margin-bottom: 8px;
+}
+
+.page-header p {
+  color: var(--texto-secundario, #94a3b8);
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+/* --- Tabela --- */
+.table-wrapper {
+  background-color: var(--bg-card, #1e293b);
+  border-radius: 16px;
+  border: 1px solid var(--borda-suave, #334155);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow-x: auto; /* Fundamental para não quebrar o ecrã em telemóveis */
+  padding: 10px;
+}
+
+.standings-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px; /* Garante que a tabela não fique demasiado esmagada */
+}
+
+.standings-table th,
+.standings-table td {
+  padding: 14px 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  color: var(--texto-principal, #f8fafc);
+}
+
+.standings-table th {
+  color: var(--texto-secundario, #94a3b8);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.standings-table tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+/* --- Colunas Específicas --- */
+.center-text {
+  text-align: center;
+}
+
+.rank-col {
+  font-weight: bold;
+  color: var(--texto-secundario, #94a3b8);
+}
+
+.team-col {
+  text-align: left;
+}
+
+.team-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.team-logo-micro {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.team-name {
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.points-col {
+  color: var(--accent-neon, #10b981);
+  font-size: 1.1rem;
+}
+
+/* --- Badges de Forma (Últimos 5 jogos) --- */
+.form-badges {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.form-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* W = Win (Vitória) | D = Draw (Empate) | L = Lose (Derrota) */
+.form-w {
+  background-color: #10b981; /* Verde */
+}
+
+.form-d {
+  background-color: #64748b; /* Cinzento */
+}
+
+.form-l {
+  background-color: #ef4444; /* Vermelho */
+}
+
+/* --- Estados de Carregamento e Erro --- */
+.status-container {
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 12px;
+  margin: 40px auto;
+  max-width: 600px;
+}
+
+.loading-state {
+  color: var(--accent-neon, #10b981);
+  background-color: rgba(16, 185, 129, 0.1);
+  border: 1px dashed var(--accent-neon, #10b981);
+}
+
+.error-state {
+  color: #ef4444;
+  background-color: rgba(239, 68, 68, 0.1);
+  border: 1px dashed #ef4444;
+}
+
+/* --- Responsividade --- */
+@media (max-width: 768px) {
+  .page-header h2 {
+    font-size: 1.6rem;
+  }
+  
+  .standings-page {
+    padding: 10px;
+  }
+  
+  .table-wrapper {
+    border-radius: 8px;
+    padding: 5px;
+  }
+}

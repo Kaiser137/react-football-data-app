@@ -32,6 +32,7 @@
   padding: 24px;
   box-shadow: var(--sombra-card);
   max-width: 600px;
+  transition: var(--transicao);
 }
 
 .coach-details-card img {
@@ -41,6 +42,7 @@
   object-fit: cover;
   border: 3px solid var(--accent-neon);
   box-shadow: 0 4px 10px rgba(16, 185, 129, 0.3);
+  transition: var(--transicao);
 }
 
 .coach-details-card h3 {
@@ -55,6 +57,16 @@
   font-size: 1rem;
 }
 
+.coach-details-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(16, 185, 129, 0.4);
+  box-shadow: 0 15px 25px -5px rgba(0, 0, 0, 0.4);
+}
+
+.coach-details-card:hover img {
+  border-color: var(--accent-neon); /* Borda fica verde quando passa o mouse no card */
+  transform: scale(1.05);
+}
 /* ==========================================================================
    🏃‍♂️ GRELHA E CARTÕES DOS JOGADORES (Plantel)
    ========================================================================== */
@@ -123,6 +135,49 @@
   border-bottom: none;
   font-weight: 700;
   color: var(--texto-principal);
+}
+
+.player-link {
+  margin-top: auto; /* A MÁGICA: Empurra o botão sempre para o final do cartão! */
+  display: block;
+  width: 100%; /* O botão ocupa toda a largura disponível */
+  background-color: var(--accent-neon);
+  color: #000; /* Texto escuro contrasta bem com o fundo neon */
+  font-weight: 700;
+  text-decoration: none;
+  padding: 12px 0;
+  border-radius: 8px;
+  transition: var(--transicao);
+}
+
+.player-link:hover {
+  background-color: var(--accent-neon-hover);
+  color: var(--texto-principal);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.coach-link {
+  margin-top: auto; /* A MÁGICA: Empurra o botão sempre para o final do cartão! */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%; /* O botão ocupa toda a largura disponível */
+  background-color: var(--accent-neon);
+  color: #000; /* Texto escuro contrasta bem com o fundo neon */
+  font-weight: 700;
+  text-decoration: none;
+  padding: 12px 0;
+  border-radius: 8px;
+  transition: var(--transicao);
+}
+
+.coach-link:hover {
+  background-color: var(--accent-neon-hover);
+  color: var(--texto-principal);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
 }
 
 /* ==========================================================================

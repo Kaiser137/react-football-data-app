@@ -41,9 +41,14 @@ export async function getCoachs(teamId, signal) {
             primeiroNome: item.firstname,
             sobrenome: item.lastname,
             idade: item.age,
+            nascimento: item.birth?.date || "Não informado",
+            localNascimento: item.birth?.place || "Não informado",
             nacionalidade: item.nationality,
+            altura: item.height || "Não informada",
+            peso: item.weight || "Não informado",
             foto: item.photo,
-            timeAtual: item.team ? item.team.name : "Sem clube"
+            timeAtual: item.team ? item.team.name : "Sem clube",
+            inicioNoTimeAtual: item.career && item.career.length > 0 ? item.career[0].start : "Não informado"
         }));
         
         return coachsInfo;

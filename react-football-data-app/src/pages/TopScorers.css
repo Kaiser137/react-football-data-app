@@ -1,0 +1,83 @@
+/* ==========================================================================
+   ⚽ PÁGINA DE ARTILHEIROS (E GARÇONS)
+   ========================================================================== */
+
+.top-scorers-page {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  animation: fadeInPage 0.5s ease-out forwards;
+}
+
+/* --- Cabeçalho da Página --- */
+.page-header {
+  margin-bottom: 30px;
+  border-bottom: 2px solid var(--accent-neon, #10b981);
+  padding-bottom: 16px;
+}
+
+.page-header h2 {
+  font-size: 2rem;
+  color: var(--texto-principal, #f8fafc);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.page-header p {
+  color: var(--texto-secundario, #94a3b8);
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+/* --- Estados de Loading e Erro --- */
+.status-container {
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 12px;
+  margin: 40px auto;
+  max-width: 600px;
+  animation: fadeInPage 0.3s ease-out;
+}
+
+.loading-state {
+  color: var(--accent-neon, #10b981);
+  background-color: rgba(16, 185, 129, 0.1);
+  border: 1px dashed var(--accent-neon, #10b981);
+}
+
+.error-state {
+  color: #ef4444; /* Vermelho para o erro */
+  background-color: rgba(239, 68, 68, 0.1);
+  border: 1px dashed #ef4444;
+}
+
+/* --- Animações --- */
+@keyframes fadeInPage {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Responsividade --- */
+@media (max-width: 768px) {
+  .page-header h2 {
+    font-size: 1.6rem;
+  }
+  
+  .page-header p {
+    font-size: 1rem;
+  }
+  
+  .top-scorers-page {
+    padding: 15px;
+  }
+}

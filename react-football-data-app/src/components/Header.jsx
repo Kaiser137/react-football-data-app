@@ -13,10 +13,34 @@ export default function Header() {
           <li>
             <NavLink 
               to="/" 
-              className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
+              className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
               end
             >
-              Ligas & Times
+              Times
+            </NavLink>
+          </li>
+          <li>
+            <NavLink 
+              to="/classificacao" 
+              className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+            >
+              Classificação
+            </NavLink>
+          </li>
+          <li>
+            <NavLink 
+              to="/artilheiros" 
+              className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+            >
+              Artilheiros
+            </NavLink>
+          </li>
+          <li>
+            <NavLink 
+              to="/garcons" 
+              className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+            >
+              Garçons
             </NavLink>
           </li>
         </ul>

@@ -1,0 +1,41 @@
+/* ==========================================================================
+   🎬 PÁGINA DE DETALHES (DETAILS PAGE)
+   ========================================================================== */
+
+.details-page {
+  padding: 40px 20px;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Espaçamento para garantir que o conteúdo não fique colado no topo */
+.details-page .details-container {
+  margin-top: 0; 
+}
+
+/* Mensagens de erro e loading personalizadas */
+.error-msg {
+  color: #ef4444;
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 40px;
+  background: rgba(239, 68, 68, 0.1);
+  border-radius: 12px;
+  border: 1px dashed #ef4444;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .details-page {
+    padding: 20px 10px;
+  }
+}
