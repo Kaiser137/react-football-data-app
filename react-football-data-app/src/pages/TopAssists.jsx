@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { getTopPlayers } from '../services/getTopPlayers';
 import TopPlayerList from '../components/TopPlayerList';
-import './TopAssists.css'; // 🚀 O nosso novo ficheiro de estilos!
+import './TopAssists.css';
 
 export default function TopAssists() {
   const [assistsData, setAssistsData] = useState([]);

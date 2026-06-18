@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
-import { useParams, useNavigate, Link } from 'react-router-dom'; // 👈 1. Adicionado o Link aqui!
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import { getPlayers } from '../services/getPlayers';
 import { getCoachs } from '../services/getCoachs';
 import './TeamDetails.css';
 
 export default function TeamDetails() {
-  const { id } = useParams(); // 👈 Esse 'id' é o id do time!
+  const { id } = useParams();
   const navigate = useNavigate();
 
   const [players, setPlayers] = useState([]);
@@ -60,8 +60,6 @@ export default function TeamDetails() {
                   <h3>{coach.nome}</h3>
                   <p><strong>Idade:</strong> {coach.idade} anos</p>
                   <p><strong>Nacionalidade:</strong> {coach.nacionalidade}</p>
-                  
-                  {/* 👈 2 e 3. Corrigido para coach.id e teamId: id */}
                   <Link to={`/treinador/${coach.id}`} state={{ teamId: id }} className="coach-link">
                     Ver Detalhes do técnico
                   </Link>
@@ -79,8 +77,6 @@ export default function TeamDetails() {
                 <p>Posição: {player.posicao}</p>
                 <p>Idade: {player.idade} anos</p>
                 <p>⚽ Gols: {player.gols}</p>
-                
-                {/* 👈 4. Corrigido teamId: id aqui também */}
                 <Link to={`/jogador/${player.id}`} state={{ teamId: id }} className="player-link">
                   Ver Detalhes do Jogador
                 </Link>

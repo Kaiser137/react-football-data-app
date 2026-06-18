@@ -1,21 +1,18 @@
 import { useState, useEffect } from 'react';
 import { getStandings } from '../services/getLeague';
-import './Standings.css'; // Importaremos o CSS na nossa próxima etapa!
+import './Standings.css';
 
 export default function Standings() {
-  // Gerenciamento de estado (Critério C1 da Rubrica)
   const [standings, setStandings] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // Implementação da função de cleanup exigida pela rubrica (Critério C2)
     const abortController = new AbortController();
 
     async function fetchStandings() {
       try {
         setLoading(true);
-        // Buscando a classificação do Brasileirão (Liga 71, Temporada 2023)
         const data = await getStandings(71, 2023, abortController.signal);
         setStandings(data);
         setError(null);
@@ -35,7 +32,6 @@ export default function Standings() {
     };
   }, []);
 
-  // Feedback de loading e erro (Critério D2 da Rubrica)
   if (loading) {
     return (
       <div className="status-container loading-state">
@@ -99,7 +95,6 @@ export default function Standings() {
                 
                 <td className="form-col center-text">
                   <div className="form-badges">
-                    {/* A propriedade 'forma' traz uma string tipo "WDLLW". Vamos separar em badges. */}
                     {team.forma && team.forma.split('').map((char, index) => (
                       <span key={index} className={`form-badge form-${char.toLowerCase()}`}>
                         {char}

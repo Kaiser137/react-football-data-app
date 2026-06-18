@@ -2,7 +2,6 @@ const API_KEY = import.meta.env.VITE_API_KEY;
 const BASE_URL = 'https://v3.football.api-sports.io';
 
 export async function getCoachs(teamId, signal) {
-    // 1. Validação de segurança
     if (!teamId) {
         throw new Error("⚠️ O parâmetro de time (teamId) é obrigatório para buscar o treinador.");
     }
@@ -15,7 +14,7 @@ export async function getCoachs(teamId, signal) {
             'x-apisports-key': API_KEY, 
             'Accept': 'application/json'
         },
-        signal // Preparado para o cleanup do useEffect
+        signal
     };
 
     try {        

@@ -6,7 +6,6 @@ export async function getPlayerById(playerId, season, signal) {
         throw new Error("⚠️ Parâmetros de jogador e temporada são obrigatórios.");
     }
 
-    // 👇 O SEGREDO: Buscando direto na fonte pelo ID exato!
     const url = `${BASE_URL}/players?id=${playerId}&season=${season}`;
 
     const options = {
@@ -31,7 +30,7 @@ export async function getPlayerById(playerId, season, signal) {
             throw new Error("⚠️ Detalhes do jogador não encontrados na base de dados.");
         }
         
-        const item = data.response[0]; // A API retorna um array com 1 único jogador
+        const item = data.response[0];
         const player = item.player;
         const stats = item.statistics[0]; 
 

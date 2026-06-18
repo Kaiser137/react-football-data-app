@@ -31,16 +31,12 @@ export async function getStandings(leagueId, season, signal) {
             throw new Error("❌ Erro retornado pela API: " + JSON.stringify(data.errors));
         }
 
-        // ⚠️ Atenção aqui: a estrutura de resposta para "standings" é mais profunda.
         if (!data.response || data.response.length === 0 || !data.response[0].league.standings) {
             throw new Error("⚠️ Nenhuma classificação encontrada para esses parâmetros.");
         }
-        
-        // A API retorna um array de arrays para a tabela (pois algumas ligas têm grupos).
-        // Como o Brasileirão é pontos corridos, a tabela inteira fica no índice [0].
+
         const standingsData = data.response[0].league.standings[0];
 
-        // Função de mapeamento (mapper) convertendo para o frontend 
         const standingsInfo = standingsData.map(item => ({
             posicao: item.rank,
             id: item.team.id,
@@ -52,7 +48,7 @@ export async function getStandings(leagueId, season, signal) {
             empates: item.all.draw,
             derrotas: item.all.lose,
             saldoGols: item.goalsDiff,
-            forma: item.form // Ex: "WDWWD" (Vitória, Empate, Vitória...)
+            forma: item.form
         }));
         
         return standingsInfo;

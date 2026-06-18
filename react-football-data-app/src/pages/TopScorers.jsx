@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { getTopPlayers } from '../services/getTopPlayers';
 import TopPlayerList from '../components/TopPlayerList';
-import './TopScorers.css'; // 🚀 O nosso novo ficheiro de estilos!
+import './TopScorers.css';
 
 export default function TopScorers() {
   const [scorers, setScorers] = useState([]);

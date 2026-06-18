@@ -3,7 +3,6 @@ import './DetailsView.css';
 export default function DetailsView({ data }) {
   if (!data) return <p className="loading-msg">Carregando dados da API...</p>;
 
-  // Filtramos apenas as chaves que não queremos mostrar como campos de texto (ex: foto e nome)
   const infoKeys = Object.keys(data).filter(key => key !== 'foto' && key !== 'nome');
 
   return (

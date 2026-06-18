@@ -14,7 +14,6 @@ export default function Details({ entityType }) {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        // 👇 INSTANCIANDO O CONTROLLER AQUI
         const controller = new AbortController();
         const signal = controller.signal;
 
@@ -30,10 +29,8 @@ export default function Details({ entityType }) {
                 let selectedEntity;
 
                 if (entityType === 'player') {
-                    // 👇 Passando o signal na chamada!
                     selectedEntity = await getPlayerById(id, 2023, signal);
                 } else {
-                    // 👇 Passando o signal na chamada!
                     data = await getCoachs(teamId, signal);
                     selectedEntity = data.find(c => c.id === parseInt(id));
                 }
@@ -45,7 +42,6 @@ export default function Details({ entityType }) {
                 }
                 setError(null);
             } catch (err) {
-                // Se o erro foi causado pelo cancelamento, ignoramos, senão mostramos o erro
                 if (err.name !== 'AbortError') {
                     setError("Erro: " + err.message);
                 }
@@ -56,7 +52,6 @@ export default function Details({ entityType }) {
 
         fetchData();
 
-        // 👇 A FUNÇÃO DE CLEANUP QUE GARANTE A NOTA MÁXIMA
         return () => {
             controller.abort();
         };

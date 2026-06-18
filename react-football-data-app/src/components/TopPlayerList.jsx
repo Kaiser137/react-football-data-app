@@ -11,12 +11,10 @@ export default function TopPlayerList({ players, statType = "gols" }) {
       {players.map((player, index) => (
         <div key={player.id} className="top-player-card">
           
-          {/* Medalha de posição no ranking (opcional, mas dá um charme) */}
           <div className="ranking-badge">{index + 1}º</div>
 
           <div className="photo-container">
             <img className="player-photo" src={player.foto} alt={player.nome} />
-            {/* Como o seu getTopPlayers traz o escudo, vamos usar! */}
             {player.escudo && (
               <img className="team-logo" src={player.escudo} alt={player.time} />
             )}
